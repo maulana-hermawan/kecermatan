@@ -1,0 +1,6 @@
+{
+  "name": "Binjas Perkasa: CAT Polri Accuracy Test",
+  "description": "An interactive web application to practice for the Police Entrance Exam (CAT Polri) accuracy test. It features timed rounds, multiple-choice questions, and a detailed results summary with charts.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
