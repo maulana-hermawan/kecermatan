@@ -1,0 +1,63 @@
+/* Animasi fade-in sederhana */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Custom styles untuk Bar Chart */
+.chart-bar-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 100%; 
+    flex-direction: column; 
+    justify-content: flex-end; 
+}
+.chart-bar {
+    width: 100%;
+    transition: height 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+}
+.bar-correct { background-color: #16a34a; }
+.bar-incorrect { 
+    background-color: #dc2626; 
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+/* Gaya untuk Y-Axis */
+.y-axis-labels-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end; /* Align numbers to the right */
+    width: 40px; /* Fixed width for labels */
+    height: 100%;
+    position: relative; 
+    padding-right: 5px; 
+    box-sizing: border-box; 
+    font-size: 0.75rem; /* Ukuran font label default */
+}
+.y-axis-label {
+    color: #64748b; /* Warna teks label */
+    position: relative; 
+    white-space: nowrap; 
+}
+/* Penyesuaian posisi Y-axis labels agar pas dengan garis */
+.y-axis-label:first-child { transform: translateY(-50%); }
+.y-axis-label:last-child { transform: translateY(50%); }
+
+/* Garis horizontal kecil untuk setiap label di Y-axis */
+.y-axis-label::after {
+    content: '';
+    position: absolute;
+    right: -5px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px; 
+    border-bottom: 1px solid #e2e8f0; 
+}
