@@ -2,10 +2,10 @@
 // KONSTANTA
 // =================================================================================
 const TOTAL_ROUNDS = 10;
-const ROUND_DURATION_SECONDS = 75;
-const BREAK_DURATION_SECONDS = 7;
+const ROUND_DURATION_SECONDS = 70;
+const BREAK_DURATION_SECONDS = 6;
 const PRE_TEST_COUNTDOWN_SECONDS = 5;
-const EXAMPLE_TEMPLATES = ["58902", "36748", "34523", "73840", "91842", "IO01B", "W7RVA", "KJH3Q", "9AZX2", "MB7CQ"];
+const EXAMPLE_TEMPLATES = ["W3V6I", "RB8TY", "O1HLP", "K9WVT", "QP85S", "IO01B", "MSD0P", "48BQM", "R32XZ", "MB7CQ"];
 const NUM_QUESTIONS_PER_ROUND = 75;
 const NUM_OPTIONS = 5;
 
