@@ -1,8 +1,8 @@
 // =================================================================================
 // KONSTANTA
 // =================================================================================
-const TOTAL_ROUNDS = 10;
-const ROUND_DURATION_SECONDS = 60;
+const TOTAL_ROUNDS = 2;
+const ROUND_DURATION_SECONDS = 30;
 const BREAK_DURATION_SECONDS = 5;
 const PRE_TEST_COUNTDOWN_SECONDS = 5;
 const EXAMPLE_TEMPLATES = ["3GY2H", "U09ID", "X6W2E", "KL3M5", "AQ2Z6", "B4NJ8", "R0N5H", "3G4CV", "L14ST", "K8V7N"];
@@ -36,19 +36,19 @@ const calculateStdDev = (arr) => {
     return Math.sqrt(variance);
 };
 const getSpeedAnalysis = (avgAnswered) => {
-            if (avgAnswered >= 30) return { level: 'Sangat Cepat', description: 'Kecepatan kerja Anda luar biasa, mampu memproses informasi dan menjawab dengan sangat efisien.' };
-            if (avgAnswered >= 20) return { level: 'Cepat', description: 'Anda memiliki kecepatan kerja di atas rata-rata. Ini adalah aset penting dalam tes berbasis waktu.' };
-            if (avgAnswered >= 10) return { level: 'Cukup', description: 'Kecepatan kerja Anda berada pada tingkat yang memadai. Latihan dapat membantu meningkatkannya.' };
-            return { level: 'Perlu Ditingkatkan', description: 'Kecepatan Anda masih bisa dioptimalkan. Fokus pada pengenalan pola untuk mempercepat respons.' };
+            if (avgAnswered >= 30) return { level: 'DEMO DEMO', description: 'Ini adalah DEMO.' };
+            if (avgAnswered >= 20) return { level: 'DEMO', description: 'Ini adalah DEMO' };
+            if (avgAnswered >= 10) return { level: 'DEMO', description: 'Ini adalah DEMO' };
+            return { level: 'Perlu Ditingkatkan', description: 'Ini adalah DEMO' };
         };
 
         const getAccuracyAnalysis = (totalCorrect, totalAnswered) => {
             if (totalAnswered === 0) return { level: 'N/A', description: 'Tidak ada jawaban yang tercatat untuk dianalisis.' };
             const accuracyPercentage = (totalCorrect / totalAnswered) * 100;
-            if (accuracyPercentage >= 95) return { level: 'Sangat Teliti', description: 'Tingkat ketelitian Anda sangat tinggi. Anda mampu bekerja cepat tanpa mengorbankan kualitas.' };
-            if (accuracyPercentage >= 85) return { level: 'Teliti', description: 'Anda mampu menjaga ketelitian dengan baik. Pertahankan fokus untuk meminimalkan kesalahan kecil.' };
-            if (accuracyPercentage >= 75) return { level: 'Cukup Teliti', description: 'Ketelitian Anda cukup, namun ada ruang untuk perbaikan. Periksa kembali sebelum memilih.' };
-            return { level: 'Perlu Ditingkatkan', description: 'Banyak terjadi kesalahan. Coba untuk sedikit lebih tenang dan fokus pada ketepatan jawaban.' };
+            if (accuracyPercentage >= 95) return { level: 'demo demo', description: 'Ini adalah DEMO.' };
+            if (accuracyPercentage >= 85) return { level: 'demo', description: 'Ini adalah DEMO' };
+            if (accuracyPercentage >= 75) return { level: 'demo demo', description: 'Ini adalah DEMO' };
+            return { level: 'Perlu Ditingkatkan', description: 'Ini adalah DEMO' };
         };
 
         const getEnduranceAnalysis = (answeredPerRound) => {
@@ -58,10 +58,10 @@ const getSpeedAnalysis = (avgAnswered) => {
             const secondHalf = answeredPerRound.slice(Math.ceil(totalRounds / 2));
             const avgFirstHalf = calculateAverage(firstHalf);
             const avgSecondHalf = calculateAverage(secondHalf);
-            if (avgSecondHalf >= avgFirstHalf * 0.95) return { level: 'Sangat Baik', description: 'Daya tahan Anda luar biasa. Anda mampu menjaga atau bahkan meningkatkan performa di bawah tekanan waktu yang lama.' };
-            if (avgSecondHalf >= avgFirstHalf * 0.85) return { level: 'Baik', description: 'Anda memiliki daya tahan yang baik, hanya terjadi sedikit penurunan performa seiring berjalannya waktu.' };
-            if (avgSecondHalf >= avgFirstHalf * 0.75) return { level: 'Cukup', description: 'Terlihat adanya tanda-tanda kelelahan. Performa Anda cenderung menurun pada paruh akhir tes.' };
-            return { level: 'Perlu Ditingkatkan', description: 'Terjadi penurunan performa yang signifikan. Latih konsentrasi dan stamina untuk menjaga stabilitas kerja.' };
+            if (avgSecondHalf >= avgFirstHalf * 0.95) return { level: 'demo', description: 'Ini adalah DEMO Ini adalah DEMO Ini adalah DEMO Ini adalah DEMO' };
+            if (avgSecondHalf >= avgFirstHalf * 0.85) return { level: 'demo', description: 'Ini adalah DEMO Ini adalah DEMO Ini adalah DEMO Ini adalah DEMO' };
+            if (avgSecondHalf >= avgFirstHalf * 0.75) return { level: 'demo', description: 'Ini adalah DEMO Ini adalah DEMO Ini adalah DEMO Ini adalah DEMO.' };
+            return { level: 'Perlu Ditingkatkan', description: 'Terjadi penuruIni adalah DEMO an stamina untuk menIni adalah DEMO kerja.' };
         };
 
         const getConsistencyAnalysis = (answeredPerRound) => {
@@ -69,9 +69,9 @@ const getSpeedAnalysis = (avgAnswered) => {
             if (avg === 0) return { level: 'N/A', description: 'Tidak ada jawaban yang tercatat.' };
             const stdDev = calculateStdDev(answeredPerRound);
             const coefficientOfVariation = (stdDev / avg) * 100;
-            if (coefficientOfVariation <= 15) return { level: 'Sangat Stabil', description: 'Ritme kerja Anda sangat konsisten. Ini menunjukkan tingkat fokus dan stabilitas emosi yang tinggi.' };
-            if (coefficientOfVariation <= 25) return { level: 'Cukup Stabil', description: 'Ritme kerja Anda cukup konsisten, meskipun ada sedikit fluktuasi antar ronde.' };
-            return { level: 'Kurang Stabil', description: 'Performa Anda cenderung naik-turun. Latih untuk menjaga ritme kerja yang lebih stabil di setiap ronde.' };
+            if (coefficientOfVariation <= 15) return { level: 'Sangat Stabil', description: 'Ini adalah DEMO.' };
+            if (coefficientOfVariation <= 25) return { level: 'Cukup Stabil', description: 'Ini adalah DEMO' };
+            return { level: 'Kurang Stabil', description: 'Ini adalah DEMOe.' };
         };
 
         const analyzePerformance = (results) => {
@@ -294,12 +294,13 @@ const getSpeedAnalysis = (avgAnswered) => {
             return `
             <div class="text-center animate-fade-in flex flex-col items-center">
                 <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-2">
-                    Instruksi Tes Kecermatan, <span class="text-yellow-500">${playerName}</span>
+                    Instruksi DEMO Tes Kecermatan, <span class="text-yellow-500">${playerName}</span>
                 </h2>
                 <p class="text-slate-600 mb-6 font-semibold">Harap baca instruksi berikut dengan seksama:</p>
                 <div class="text-left w-full space-y-4 mb-8 bg-slate-100 p-6 rounded-lg shadow-inner">
                     <p class="font-bold text-slate-800">Tujuan Tes:</p>
                     <ul class="list-disc list-inside text-slate-700 space-y-2 ml-4">
+                        <li>Tes ini hanya bersifat sebagai DEMO. untuk hasil lebih lengkap silakan mendaftar ke Bimbel Perkasa</li>
                         <li>Mengukur kecepatan dan ketelitian Anda dalam memproses informasi visual.</li>
                     </ul>
 
@@ -378,14 +379,7 @@ const getSpeedAnalysis = (avgAnswered) => {
                 </div>
               </div>
               
-              <div id="action-buttons" class="mt-8 pt-6 border-t border-slate-200 w-full flex flex-col sm:flex-row justify-center items-center gap-4">
-                  <button id="next-round-btn" class="w-full sm:w-auto px-6 py-3 bg-slate-800 text-white font-bold rounded-lg hover:bg-slate-700 transition">
-                    Lanjut Ronde Berikutnya
-                  </button>
-                  <button id="end-test-btn" class="w-full sm:w-auto px-6 py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition">
-                    Akhiri Tes
-                  </button>
-              </div>
+
             </div>
         `;
 
@@ -413,11 +407,11 @@ const getSpeedAnalysis = (avgAnswered) => {
 
             const performanceReport = analyzePerformance(results);
             const levelColorClasses = {
-                'Sangat Cepat': 'bg-blue-100 text-blue-800', 'Cepat': 'bg-blue-100 text-blue-800',
-                'Sangat Teliti': 'bg-green-100 text-green-800', 'Teliti': 'bg-green-100 text-green-800',
-                'Sangat Baik': 'bg-purple-100 text-purple-800', 'Baik': 'bg-purple-100 text-purple-800',
-                'Sangat Stabil': 'bg-indigo-100 text-indigo-800', 'Cukup Stabil': 'bg-indigo-100 text-indigo-800',
-                'Cukup': 'bg-yellow-100 text-yellow-800', 'Cukup Teliti': 'bg-yellow-100 text-yellow-800',
+                'DEMO': 'bg-blue-100 text-blue-800', 'DEMO': 'bg-blue-100 text-blue-800',
+                'DEMO': 'bg-green-100 text-green-800', 'DEMO': 'bg-green-100 text-green-800',
+                'DEMO': 'bg-purple-100 text-purple-800', 'DEMO': 'bg-purple-100 text-purple-800',
+                'DEMO': 'bg-indigo-100 text-indigo-800', 'DEMO DEMO': 'bg-indigo-100 text-indigo-800',
+                'DEMO': 'bg-yellow-100 text-yellow-800', 'DEMO DEMO': 'bg-yellow-100 text-yellow-800',
                 'Perlu Ditingkatkan': 'bg-red-100 text-red-800', 'Kurang Stabil': 'bg-red-100 text-red-800',
                 'N/A': 'bg-slate-100 text-slate-800',
             };
@@ -493,6 +487,9 @@ const getSpeedAnalysis = (avgAnswered) => {
                 </div>
                 
                 <div class="my-8">
+                <h3 class="text-xl font-bold text-slate-700 text-center mb-4">Analisis Kinerja Psikologis</h3>
+                <div style="position:relative;border:1px dashed #36507e;border-radius:14px;padding:14px;margin:18px 0;">
+                    <div style="filter:blur(6px);user-select:none;pointer-events:none;">
                    <h3 class="text-xl font-bold text-slate-700 text-center mb-4">Analisis Kinerja Psikologis</h3>
                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         ${aspectCard('Kecepatan (Speed)', performanceReport.speed, '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>')}
@@ -500,11 +497,17 @@ const getSpeedAnalysis = (avgAnswered) => {
                         ${aspectCard('Daya Tahan (Endurance)', performanceReport.endurance, '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0011.667 0l3.181-3.183m-4.991-2.69v4.99" /></svg>')}
                         ${aspectCard('Konsistensi (Consistency)', performanceReport.consistency, '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-12a2.25 2.25 0 01-2.25-2.25V3z" /></svg>')}
                    </div>
+                   </div>
+                   </div>
                 </div>
 
                 <div class="mb-8">
                   <h3 class="text-xl font-bold text-slate-700 text-center mb-4">Grafik Hasil per Ronde</h3>
+                  <div style="position:relative;border:1px dashed #36507e;border-radius:14px;padding:14px;margin:18px 0;">
+                    <div style="filter:blur(6px);user-select:none;pointer-events:none;">
                   ${chartHTML}
+                  </div>
+                  </div>
                 </div>
 
                 <div class="mb-8">
@@ -512,6 +515,10 @@ const getSpeedAnalysis = (avgAnswered) => {
                     <div class="overflow-x-auto rounded-lg border border-slate-200"><table class="min-w-full divide-y divide-slate-200 text-center"><thead class="bg-slate-100"><tr><th class="px-6 py-3 text-xs font-medium text-slate-600 uppercase tracking-wider">Ronde</th><th class="px-6 py-3 text-xs font-medium text-slate-600 uppercase tracking-wider">Jumlah</th><th class="px-6 py-3 text-xs font-medium text-green-700 uppercase tracking-wider">Benar</th><th class="px-6 py-3 text-xs font-medium text-red-700 uppercase tracking-wider">Salah</th></tr></thead><tbody class="bg-white divide-y divide-slate-200">
                         ${results.map(r => `<tr><td class="px-6 py-4 whitespace-nowrap font-medium text-slate-800">${r.round}</td><td class="px-6 py-4 whitespace-nowrap font-medium text-slate-800">${r.answered}</td><td class="px-6 py-4 whitespace-nowrap font-medium text-green-600">${r.correct}</td><td class="px-6 py-4 whitespace-nowrap font-medium text-red-600">${r.incorrect}</td></tr>`).join('')}
                     </tbody></table></div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-slate-700 text-center mb-4">Dapatkan Hasil Lengkap dengan mendaftar ke Bimbel Perkasa</h3>
                 </div>
                 
                 <div class="text-center">
